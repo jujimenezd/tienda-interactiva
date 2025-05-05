@@ -1,4 +1,10 @@
-/**/
+/*Nav bar*/
+.navbar-collapse {
+  justify-content: end;
+  padding: 0.5rem;
+}
+
+/*Hero Section*/
 .section-hero {
   background-image: url("../img/hero.jpg");
   background-size: cover;
@@ -8,10 +14,34 @@
   height: 450px;
   position: relative;
 }
-
+/*Overlay*/
 .container-hero {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.555);
   width: 100%;
   height: 100%;
+}
+
+/* Estilos para mantener las imágenes del mismo tamaño */
+.card-img-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estilo para el carrusel */
+.carousel-item {
+  height: 200px;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

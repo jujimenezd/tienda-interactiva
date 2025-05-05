@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tienda Interactiva</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preload" href="css/styles.css" as="style" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,7 +15,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav class="navbar navbar-expand-md bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Online Store</a>
           <button
@@ -29,7 +30,9 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul
+              class="navbar-nav d-flex justify-content-center align-items-center"
+            >
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
@@ -66,25 +69,110 @@
       </div>
     </section>
 
-    <main class="mt-3">
-      <!-- Contenedor principal -->
+    <main class="mt-3 bg-light">
+      <!-- Contenedor principal productos -->
       <div class="container">
         <div class="row text-center">
-          <div class="col-4 d-flex justify-content-start align-items-center">
-            <h2>Productos nuevos</h2>
+          <div class="col-md-12 col-lg-4 mb-3">
+            <div class="row">
+              <h2>Productos nuevos</h2>
+            </div>
+
+            <!-- Fila con el formulario -->
+            <div class="row">
+              <div class="col-12">
+                <div class="container">
+                  <form action="" class="">
+                    <fieldset>
+                      <legend>Seleccionar un producto</legend>
+                      <div class="container d-flex flex-column gap-3">
+                        <div class="container text-start">
+                          <label for="search" class="form-label"
+                            >Producto:</label
+                          >
+                          <select name="search" id="search" class="form-select">
+                            <option value="">Selecciona un producto</option>
+                            <option value="1">Producto 1</option>
+                            <option value="2">Producto 2</option>
+                            <option value="3">Producto 3</option>
+                            <option value="4">Producto 4</option>
+                          </select>
+                        </div>
+                        <div class="container text-start">
+                          <label for="quantity" class="form-label"
+                            >Cantidad:</label
+                          >
+                          <input
+                            type="number"
+                            name="quantity"
+                            id="quantity"
+                            class="form-control"
+                            min="1"
+                            value="1"
+                            required
+                          />
+                        </div>
+                        <div class="container d-grid gap-2">
+                          <button type="submit" class="btn btn-success">
+                            Añadir al Carrito
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- Cierre de la fila con el formulario -->
+            <div class="row mt-4">
+              <h2>Sugeridos</h2>
+              <div class="col-12">
+                <div
+                  id="carouselExampleSlidesOnly"
+                  class="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        src="img/product_1.jpg"
+                        class="d-block w-100"
+                        alt="img/product_1.jpg"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="img/product_2.jpg"
+                        class="d-block w-100"
+                        alt="img/product_1.jpg"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="img/product_1.jpg"
+                        class="d-block w-100"
+                        alt="img/product_1.jpg"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!-- Columna con los productos -->
-          <div class="col-8">
-            <div class="row">
-              <div class="col-4">
-                <div class="card-group">
+          <!-- Columna con productos -->
+          <div class="col-md-12 col-lg-8">
+            <div class="row mb-3">
+              <div class="col">
+                <div class="card-group gap-2">
                   <div class="card" style="width: 18rem">
-                    <img
-                      src="img/product_1.jpg"
-                      class="card-img-top"
-                      alt="img/product_1.jpg"
-                    />
+                    <div class="card-img-container">
+                      <img
+                        src="img/product_1.jpg"
+                        class="card-img-top"
+                        alt="img/product_1.jpg"
+                      />
+                    </div>
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">
@@ -94,17 +182,15 @@
                       <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                   </div>
-                </div>
-              </div>
 
-              <div class="col-4">
-                <div class="card-group">
                   <div class="card" style="width: 18rem">
-                    <img
-                      src="img/product_1.jpg"
-                      class="card-img-top"
-                      alt="img/product_1.jpg"
-                    />
+                    <div class="card-img-container">
+                      <img
+                        src="img/product_2.jpg"
+                        class="card-img-top"
+                        alt="img/product_1.jpg"
+                      />
+                    </div>
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">
@@ -114,77 +200,15 @@
                       <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                   </div>
-                </div>
-              </div>
 
-              <div class="col-4">
-                <div class="card-group">
                   <div class="card" style="width: 18rem">
-                    <img
-                      src="img/product_1.jpg"
-                      class="card-img-top"
-                      alt="img/product_1.jpg"
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        Some quick example text to build on the card title and
-                        make up the bulk of the card's content.
-                      </p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div class="card-img-container">
+                      <img
+                        src="img/product_1.jpg"
+                        class="card-img-top"
+                        alt="img/product_1.jpg"
+                      />
                     </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-4">
-                <div class="card-group">
-                  <div class="card" style="width: 18rem">
-                    <img
-                      src="img/product_1.jpg"
-                      class="card-img-top"
-                      alt="img/product_1.jpg"
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        Some quick example text to build on the card title and
-                        make up the bulk of the card's content.
-                      </p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-4">
-                <div class="card-group">
-                  <div class="card" style="width: 18rem">
-                    <img
-                      src="img/product_1.jpg"
-                      class="card-img-top"
-                      alt="img/product_1.jpg"
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">
-                        Some quick example text to build on the card title and
-                        make up the bulk of the card's content.
-                      </p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-4">
-                <div class="card-group">
-                  <div class="card" style="width: 18rem">
-                    <img
-                      src="img/product_1.jpg"
-                      class="card-img-top"
-                      alt="img/product_1.jpg"
-                    />
                     <div class="card-body">
                       <h5 class="card-title">Card title</h5>
                       <p class="card-text">
@@ -197,11 +221,74 @@
                 </div>
               </div>
             </div>
+            <!-- Cierre del row con los 3 primeros productos -->
+
+            <div class="row">
+              <div class="col">
+                <div class="card-group gap-2">
+                  <div class="card" style="width: 18rem">
+                    <div class="card-img-container">
+                      <img
+                        src="img/product_1.jpg"
+                        class="card-img-top"
+                        alt="img/product_1.jpg"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+
+                  <div class="card" style="width: 18rem">
+                    <div class="card-img-container">
+                      <img
+                        src="img/product_1.jpg"
+                        class="card-img-top"
+                        alt="img/product_1.jpg"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+
+                  <div class="card" style="width: 18rem">
+                    <div class="card-img-container">
+                      <img
+                        src="img/product_1.jpg"
+                        class="card-img-top"
+                        alt="img/product_1.jpg"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                      </p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cierre del row con 3 productos -->
           </div>
-          <!-- Cierre de la columna con los productos -->
+          <!-- Cierre columna productos -->
         </div>
-        <!-- Cierre del contenedor principal -->
+        <!--Cierre Row productos-->
       </div>
+      <!-- Cierre del contenedor principal -->
     </main>
 
     <script
