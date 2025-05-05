@@ -2,6 +2,33 @@
 const products_form = document.getElementById("search");
 //console.log(products_form.options);
 
+// Funcion que "filtra" los productos añadiendole un borde y aumentandole su escala
+function filtrarProductos(e) {
+  // Obtenemos el value de cada option dentro del select
+  const value = e.target.value;
+  console.log(value);
+
+  // Condicional que evita que se mantengan los estilos de la anterior card seleccionada al momento de cambiar a otro producto. Basicamente por cada evento "change" se ejecuta este condicional
+  if (value) {
+    cards.forEach((card) => {
+      card.classList.remove("border-primary", "shadow");
+      card.style.transform = "scale(1)";
+    });
+  }
+
+  // Accedemos al producto que se selecciono en el select en el catalogo de productos
+  const cardSelected = document.getElementById("producto" + value);
+
+  // Añadimos un borde y aumentamos su escala
+  cardSelected.classList.add("border-primary", "shadow");
+  cardSelected.style.transform = "scale(1.05)";
+  cardSelected.style.transition = "transform 0.3s ease";
+  console.log(cardSelected);
+}
+
+// Evento que se ejecuta cuando se selecciona un producto en el select usando la funcion de filtrarProductos
+products_form.addEventListener("change", filtrarProductos);
+
 // Accedemos a todos los elementos con la clase card
 const cards = document.querySelectorAll(".card");
 //console.log(cards);
