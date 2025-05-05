@@ -6,7 +6,7 @@ const products_form = document.getElementById("search");
 function filtrarProductos(e) {
   // Obtenemos el value de cada option dentro del select
   const value = e.target.value;
-  console.log(value);
+  //console.log(value);
 
   // Condicional que evita que se mantengan los estilos de la anterior card seleccionada al momento de cambiar a otro producto. Basicamente por cada evento "change" se ejecuta este condicional
   if (value) {
@@ -23,7 +23,7 @@ function filtrarProductos(e) {
   cardSelected.classList.add("border-primary", "shadow");
   cardSelected.style.transform = "scale(1.05)";
   cardSelected.style.transition = "transform 0.3s ease";
-  console.log(cardSelected);
+  //console.log(cardSelected);
 }
 
 // Evento que se ejecuta cuando se selecciona un producto en el select usando la funcion de filtrarProductos
@@ -57,3 +57,42 @@ function createSelects() {
 }
 // Ejecucion de la funcion
 createSelects();
+
+// Accedemos al boton y al input de cantidad en el formulario
+const button = document.getElementById("cart_button");
+const quantityLabel = document.getElementById("quantity");
+
+// Lista vacia para guardar los inputs de cantidad y producto como objetos
+let items = [];
+const checkout = document.getElementById("checkout");
+
+function addProducts(e) {
+  e.preventDefault();
+  // Obtenemos el valor de la cantidad y el producto seleccionado
+  let quantity = quantityLabel.value;
+  let product = products_form.selectedOptions[0].text;
+
+  // Añadimos el producto y la cantidad al array de items
+  items.push({ item: product, item_q: quantity });
+  console.log(items);
+}
+
+function showProducts(e) {
+  e.preventDefault();
+  // Limpiamos el contenido del checkout
+  checkout.innerHTML = "";
+
+  // Iteramos sobre los items y los mostramos en el checkout
+  items.forEach((item) => {
+    const itemElement = document.createElement("div");
+    itemElement.innerHTML = `<h4>producto:${item.item}</h4>
+    <h4> cantidad:${item.item_q}</h4>`;
+    checkout.appendChild(itemElement);
+  });
+}
+
+checkout_button = document.getElementById("checkout_button");
+
+// Evento que se ejecuta cuando se clickea el boton de agregar al carrito
+button.addEventListener("click", addProducts);
+checkout_button.addEventListener("click", showProducts);

@@ -111,8 +111,21 @@
                           />
                         </div>
                         <div class="container d-grid gap-2">
-                          <button type="submit" class="btn btn-success">
+                          <button
+                            type="submit"
+                            class="btn btn-success"
+                            id="cart_button"
+                          >
                             Añadir al Carrito
+                          </button>
+                        </div>
+                        <div class="container d-grid gap-2">
+                          <button
+                            type="submit"
+                            class="btn btn-success"
+                            id="checkout_button"
+                          >
+                            Checkout
                           </button>
                         </div>
                       </div>
@@ -122,6 +135,8 @@
               </div>
             </div>
             <!-- Cierre de la fila con el formulario -->
+
+            <!-- Carousel de productos sugeridos -->
             <div class="row mt-4">
               <h2>Sugeridos</h2>
               <div class="col-12">
@@ -153,6 +168,15 @@
                       />
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cierre del carousel de productos sugeridos -->
+
+            <div class="row">
+              <div class="col-12">
+                <div class="container">
+                  <div id="checkout" class="border border-primary"></div>
                 </div>
               </div>
             </div>
@@ -288,10 +312,6 @@
       </div>
       <!-- Cierre del contenedor principal -->
     </main>
-
-    <section>
-      <h1>Test</h1>
-    </section>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
