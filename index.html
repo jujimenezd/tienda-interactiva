@@ -5,8 +5,319 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tienda Interactiva</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preload" href="css/styles.css" as="style" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <h1>Hello</h1>
+    <header>
+      <nav class="navbar navbar-expand-md bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Online Store</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul
+              class="navbar-nav d-flex justify-content-center align-items-center"
+            >
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="section-hero">
+      <div
+        class="container-hero d-flex justify-content-center align-items-center"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <h1>Bienvenido a nuestra tienda online</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus,
+                odit! Adipisci, dicta! Perferendis optio accusantium iure
+                delectus hic! Iste perferendis nemo saepe a. Inventore eveniet,
+                incidunt accusamus a suscipit minus.
+              </p>
+              <button class="btn btn-primary">Comprar ahora</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="mt-3 bg-light">
+      <!-- Contenedor principal productos -->
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-12 col-lg-4 mb-3">
+            <div class="row">
+              <h2>Productos nuevos</h2>
+            </div>
+
+            <!-- Fila con el formulario -->
+            <div class="row">
+              <div class="col-12">
+                <div class="container">
+                  <form action="" class="" id="product-selection-form">
+                    <fieldset>
+                      <legend>Seleccionar un producto</legend>
+                      <div class="container d-flex flex-column gap-3">
+                        <div class="container text-start">
+                          <label for="search" class="form-label"
+                            >Producto:</label
+                          >
+                          <select name="search" id="search" class="form-select">
+                            <option disabled selected>
+                              --Selecciona un producto--
+                            </option>
+                          </select>
+                        </div>
+                        <div class="container text-start">
+                          <label for="quantity" class="form-label"
+                            >Cantidad:</label
+                          >
+                          <input
+                            type="number"
+                            name="quantity"
+                            id="quantity"
+                            class="form-control"
+                            min="1"
+                            value="1"
+                            required
+                          />
+                        </div>
+                        <div class="container d-grid gap-2">
+                          <button
+                            type="submit"
+                            class="btn btn-success"
+                            id="cart_button"
+                          >
+                            Añadir al Carrito
+                          </button>
+                        </div>
+                        <div class="container d-grid gap-2">
+                          <button
+                            type="submit"
+                            class="btn btn-success"
+                            id="checkout_button"
+                          >
+                            Checkout
+                          </button>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- Cierre de la fila con el formulario -->
+
+            <!-- Carousel de productos sugeridos -->
+            <div class="row mt-4">
+              <h2>Sugeridos</h2>
+              <div class="col-12">
+                <div
+                  id="carouselExampleSlidesOnly"
+                  class="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        src="img/product_1.jpg"
+                        class="d-block w-100"
+                        alt="img/product_1.jpg"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="img/product_2.jpg"
+                        class="d-block w-100"
+                        alt="img/product_1.jpg"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="img/product_3.jpg"
+                        class="d-block w-100"
+                        alt="img/product_1.jpg"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cierre del carousel de productos sugeridos -->
+
+            <div class="row">
+              <div class="col-12">
+                <div class="container">
+                  <div id="checkout" class="border border-primary"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna con productos -->
+          <div class="col-md-12 col-lg-8">
+            <div class="row mb-3">
+              <div class="col">
+                <div class="card-group gap-2">
+                  <div class="card" style="width: 18rem" id="producto1">
+                    <div class="card-img-container">
+                      <img
+                        src="img/product_1.jpg"
+                        class="card-img-top"
+                        alt="img/product_1.jpg"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Blue Shoes</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                      </p>
+                      <a href="#" class="btn btn-primary">View More</a>
+                    </div>
+                  </div>
+
+                  <div class="card" style="width: 18rem" id="producto2">
+                    <div class="card-img-container">
+                      <img
+                        src="img/product_2.jpg"
+                        class="card-img-top"
+                        alt="img/product_1.jpg"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">White T-shirt</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                      </p>
+                      <a href="#" class="btn btn-primary">View More</a>
+                    </div>
+                  </div>
+
+                  <div class="card" style="width: 18rem" id="producto3">
+                    <div class="card-img-container">
+                      <img
+                        src="img/product_3.jpg"
+                        class="card-img-top"
+                        alt="img/product_1.jpg"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Black Pants</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                      </p>
+                      <a href="#" class="btn btn-primary">View More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cierre del row con los 3 primeros productos -->
+
+            <div class="row">
+              <div class="col">
+                <div class="card-group gap-2">
+                  <div class="card" style="width: 18rem" id="producto4">
+                    <div class="card-img-container">
+                      <img
+                        src="img/product_4.jpg"
+                        class="card-img-top"
+                        alt="img/product_1.jpg"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Bucket Hat & SunGlasses</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                      </p>
+                      <a href="#" class="btn btn-primary">View More</a>
+                    </div>
+                  </div>
+
+                  <div class="card" style="width: 18rem" id="producto5">
+                    <div class="card-img-container">
+                      <img
+                        src="img/product_5.jpg"
+                        class="card-img-top"
+                        alt="img/product_1.jpg"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">SunGlasses</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                      </p>
+                      <a href="#" class="btn btn-primary">View More</a>
+                    </div>
+                  </div>
+
+                  <div class="card" style="width: 18rem" id="producto6">
+                    <div class="card-img-container">
+                      <img
+                        src="img/product_6.jpg"
+                        class="card-img-top"
+                        alt="img/product_1.jpg"
+                      />
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Black Hoodie</h5>
+                      <p class="card-text">
+                        Some quick example text to build on the card title and
+                        make up the bulk of the card's content.
+                      </p>
+                      <a href="#" class="btn btn-primary">View More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cierre del row con 3 productos -->
+          </div>
+          <!-- Cierre columna productos -->
+        </div>
+        <!--Cierre Row productos-->
+      </div>
+      <!-- Cierre del contenedor principal -->
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
   </body>
 </html>
